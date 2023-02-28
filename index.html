@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ULTforAVSE-demo</title>
+</head>
+
+<body>
+<h2>Demos for &quot; Incorporating Ultrasound Tongue Images for Audio-Visual Speech Enhancement Through Knowledge Distillation &quot; .</h2>
+<p>Paper: TO DO</p>
+<p>Authors: *</p>
+<p>Abstract: Audio-visual speech enhancement (AV-SE) aims to enhance degraded speech along with extra visual information such as lip videos, and has been shown to be more effective than audio-only speech enhancement. This paper proposes further incorporating ultrasound tongue images to improve lip-based AV-SE systems' performance. Knowledge distillation is employed during the training stage to address the challenge of acquiring ultrasound tongue images during inference, enabling an audio-lip speech enhancement student model to learn from a pre-trained audio-lip-tongue speech enhancement teacher model. Experimental results demonstrate significant improvements in the quality and intelligibility of the speech enhanced by the proposed method compared to the traditional audio-lip speech enhancement baselines. We also apply automatic speech recognition to the denoised speech for evaluating the phoneme error rate (PER), and the proposed method can reduce the PER of several tongue-related phonemes.</p>
+  
+<hr />
+
+<h3>1. Comparison with Audio-Visual SE Baselines</h3>
+<p><strong><font color="#FF0000"  >Note: Noisy denotes the input noisy speech; Groundtruth denote the clean speech; Proposed denotes our proposed method; VSE denotes the method described in [10]; PVSE denotes the method described in [22] with a real lip steam; and IOAVSE denotes the method described in [23]. All the baselines' code can be found on GitHub. </font></strong>
+</p>
+<table width="1100" border="1">
+  <tr>
+    <td>Groundtruth</td>
+    <td>Noisy</td>
+    <td>Proposed</td>
+    <td>VSE</td>
+    <td>PVSE</td>
+    <td>IOAVSE</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="spec/15fe-gt.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-noisy.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-vse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-pvse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-ioavse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/15fe-005_xaud-gt.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-noisy.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-vse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-pvse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-ioavse.wav" controls="controls"></audio >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="spec/60ms-gt.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-noisy.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-vse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-pvse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-ioavse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/60ms-048_aud-gt.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-noisy.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-vse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-pvse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-ioavse.wav" controls="controls"></audio >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="spec/24fe-gt.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-noisy.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-vse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-pvse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-ioavse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/24fe-006_xaud-gt.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-noisy.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-vse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-pvse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-ioavse.wav" controls="controls"></audio >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="spec/35fs-gt.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-noisy.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-vse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-pvse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-ioavse.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/35fs-013_xaud-gt.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-noisy.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-vse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-pvse.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-ioavse.wav" controls="controls"></audio >
+    </td>
+  </tr>
+</table>
+
+<h3>2. Ablation Studies</h3>
+<p><strong><font color="#FF0000"  >Note: Proposed denotes our proposed method; w/o SPKD denotes the proposed method without the SPKD loss; Audio-Lip denotes the proposed method without Knowledge distillation; Audio-Lip-Tongue denotes the proposed teacher model. </font></strong>
+</p>
+<table width="1100" border="1">
+  <tr>
+    <td>Audio-Only</td>
+    <td>Proposed</td>
+    <td>w/o SPKD</td>
+    <td>Audio-Lip</td>
+    <td>Audio-Lip-Tongue</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="spec/15fe-ao.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-without_spkd.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-lip.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/15fe-lip_tongue.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/15fe-005_xaud-ao.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-without_spkd.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-lip.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/15fe-005_xaud-lip_tongue.wav" controls="controls"></audio >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="spec/60ms-ao.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-without_spkd.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-lip.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/60ms-lip_tongue.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/60ms-048_aud-ao.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-without_spkd.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-lip.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/60ms-048_aud-lip_tongue.wav" controls="controls"></audio >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="spec/24fe-ao.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-without_spkd.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-lip.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/24fe-lip_tongue.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/24fe-006_xaud-ao.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-without_spkd.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-lip.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/24fe-006_xaud-lip_tongue.wav" controls="controls"></audio >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="spec/35fs-ao.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-proposed.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-without_spkd.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-lip.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+    <td>
+      <img src="spec/35fs-lip_tongue.png" controls="controls" width="400px" height="134px"></img>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <audio  src="audio/35fs-013_xaud-ao.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-proposed.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-without_spkd.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-lip.wav" controls="controls"></audio >
+    </td>
+    <td>
+      <audio  src="audio/35fs-013_xaud-lip_tongue.wav" controls="controls"></audio >
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>
